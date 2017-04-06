@@ -1,0 +1,9 @@
+.Header, .Footer {
+	background-color: #e6f7ff;
+}
+
+#Logo {
+	float: center;
+	text-align: center;
+	padding: 15px;
+}
