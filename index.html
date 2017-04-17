@@ -1,44 +1,59 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 		<title>EngineeringConnect</title>
 	</head>
 	<body>
-		<div class="Header">
-			<h1 id="Logo">EngineeringConnect /* Logo could be there */</h1>
+		<div id="Header" class="row"> <!-- Header with Logo and/or Company Name -->
+			<div class="col-md-12">
+				<h1 id="Logo" class="bg-primary">EngineeringConnect</h1>
+			</div>
 		</div>
 
-		<div class="Navbar">
-			<ul>
-				<li><a href="">Home</a></li>
-				<li><a href="">Projects</a></li>
-				<li><a href="">Services</a></li>
-				<li><a href="">Contact</a></li>
-				<li><a href="">Login</a></li>
+		<div class="navbar navbar-inverse"> <!-- Navigation Bar with buttons and links -->
+			<ul class="nav navbar-nav"> <!-- Left Side -->
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Projects</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right"> <!-- Right Side -->
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Login</a></li>
 			</ul>
 		</div>
 
-		<div class="Slideshow">
+		<div> <!-- Slideshow with past projects / photographs to show-off -->
 			<p>Here there will be a slideshow to showcase the office's past projects.</p>
 		</div>
 
-		<div class="News">
+		<div>
 			<h1>News Section</h1>
 			<p>Here we will have the office's news.</p>
 		</div>
 
-		<div class="About">
+		<div>
 			<h1>About Us</h1>
 			<p>The about us section with info about the office</p>
 		</div>
 
-		<div class="Members">
+		<div>
 			<h1>Engineers</h1>
 			<p>Who are we. Short bio for everyone. Personal cards.</p>
 		</div>
 
-		<div class="Footer">
+		<div>
 			<p>This will be the footer</p>
 		</div>
 	</body>
