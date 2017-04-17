@@ -7,7 +7,8 @@
 }
 
 .Header, .Footer {
-	background-color: #e6f7ff;
+	background-color: blue;
+	color: white;
 }
 
 #Logo {
@@ -16,19 +17,21 @@
 	padding: 15px;
 }
 
-ul {
-	list-style-type: none;
+.Navbar ul {
+	list-style: none;
+	font-weight: bold;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: grey;
+	background-color: gray;
 }
 
-li {
+.Navbar li {
 	float: left;
+	width: 20%;
 }
 
-li a {
+.Navbar li a {
 	display: block;
 	color: white;
 	text-align: center;
@@ -37,7 +40,7 @@ li a {
 }
 
 a:hover:not(.active) {
-    background-color: #111;
+    background-color: black;
 }
 
 .active {
