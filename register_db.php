@@ -103,39 +103,48 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading"><h4>Register Form</h4></div>
 					<div class="panel-body">
-						<form action=""> <!-- Register Form -->
-							<div class="form-group">
-								<label for="email">E-Mail Address</label>
-								<input type="email" class="form-control" id="email" name="email">
-							</div>
-							<div class="form-group">
-								<label for="password">Password</label>
-								<input type="password" class="form-control" id="password" name="pwd">
-							</div>
-							<div class="form-group">
-								<label for="password_confirm">Retype Password</label>
-								<input type="password" class="form-control" id="confirm_password" name="pwd2">
-							</div>
-							<div class="form-group">
-								<label for="name">Name</label>
-								<input type="text" class="form-control" id="name" name="name">
-							</div>
-							<div class="form-group">
-								<label for="surname">Surname</label>
-								<input type="text" class="form-control" id="surname" name="surname">
-							</div>
-							<div class="form-group">
-								<label for="speciality">Speciality</label>
-								<input type="text" class="form-control" id="speciality" name="speciality">
-							</div>
-							<div class="form-group">
-								<label for="terms">Terms and Conditions</label>
-								<br>
-								<label for="terms" class="radio-inline"><input type="radio" name="terms" value="1">Agree</label>
-								<label for="terms" class="radio-inline"><input type="radio" name="terms" value="0">Disagree</label>
-							</div>
-							<button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
-						</form>
+						<?php
+                            $email = $_POST["email"];
+                            $pwd = $_POST["pwd"];
+                            $pwd2 = $_POST["pwd2"];
+                            $name = $_POST["name"];
+                            $surname = $_POST["surname"];
+                            $speciality = $_POST["speciality"];
+
+                            if ($pwd == $pwd2)
+                            {
+                                $server_name = "localhost";
+                                $username = "ip_database_handler";
+                                $password = "bio7720";
+                                $dbName = "engineering_connect";
+
+                                $connect = mysqli_connect($server_name, $username, $password, $dbName);
+
+                                if (!$connect)
+                                {
+                                    die("Connection Failed: " . mysqli_connect_error());
+                                }
+                                else
+                                {
+                                    echo "Successfull Connection<br>";
+                                }
+
+                                $sql = "INSERT INTO `users` (`UID`, `E-Mail`, `Password`, `Name`, `Surname`, `Speciality`) VALUES (NULL, '$email', '$pwd', '$name', '$surname', '$speciality')";
+
+                                $result = mysqli_query($connect, $sql);
+
+                                if ($result)
+                                {
+                                    echo "New account created <br>";
+                                }
+
+                                mysqli_close($connect);
+                            }
+                            else
+                            {
+                                echo "Retype password";
+                            }
+                        ?>
 					</div>
 				</div>
 			</div>
