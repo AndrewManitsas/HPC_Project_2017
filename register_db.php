@@ -114,8 +114,8 @@
                             if ($pwd == $pwd2)
                             {
                                 $server_name = "localhost";
-                                $username = "ip_database_handler";
-                                $password = "bio7720";
+                                $username = "root";
+                                $password = "123";
                                 $dbName = "engineering_connect";
 
                                 $connect = mysqli_connect($server_name, $username, $password, $dbName);
@@ -129,7 +129,7 @@
                                     echo "Successfull Connection<br>";
                                 }
 
-                                $sql = "INSERT INTO `users` (`UID`, `E-Mail`, `Password`, `Name`, `Surname`, `Speciality`) VALUES (NULL, '$email', '$pwd', '$name', '$surname', '$speciality')";
+                                $sql = "INSERT INTO `users` (`UID`, `Email`, `Password`, `Name`, `Surname`, `Speciality`) VALUES (NULL, '$email', '$pwd', '$name', '$surname', '$speciality')";
 
                                 $result = mysqli_query($connect, $sql);
 

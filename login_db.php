@@ -43,8 +43,8 @@
 					<div class="panel-body">
 						<?php
                             $server_name = "localhost";
-                            $username = "ip_database_handler";
-                            $password = "bio7720";
+                            $username = "root";
+                            $password = "123";
                             $dbName = "engineering_connect";
 
                             //Create connection
@@ -62,7 +62,7 @@
 
                             $email = $_POST["email"];
                             $pwd = $_POST["pwd"];
-                            $sql = "SELECT * FROM users WHERE E-Mail = '$email' AND Password = '$pwd'";
+                            $sql = "SELECT * FROM users WHERE Email = '$email' AND Password = '$pwd'";
                             $result = mysqli_query($connect, $sql);
 
                             if (mysqli_num_rows($result) > 0)
@@ -70,7 +70,7 @@
                                 while($row = mysqli_fetch_assoc($result))
                                 {
                                     echo "Matching account:" . "<br>";
-                                    echo "UID: " . $row["UID"] . " --- E-Mail: " . $row["E-Mail"] . " --- Password: " . $row["Password"] . " --- Name: " . $row["Name"] . " --- Surname: " . $row["Surname"] . " --- Speciality: " . $row["Speciality"] . "<br>";
+                                    echo "UID: " . $row["UID"] . " --- Email: " . $row["Email"] . " --- Password: " . $row["Password"] . " --- Name: " . $row["Name"] . " --- Surname: " . $row["Surname"] . " --- Speciality: " . $row["Speciality"] . "<br>";
                                 }
                             }
                             else
