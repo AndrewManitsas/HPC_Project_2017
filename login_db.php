@@ -65,7 +65,7 @@
                                 {
                                     echo "Matching account:" . "<br>";
                                     echo "UID: " . $row["UID"] . " --- Email: " . $row["Email"] . " --- Password: " . $row["Password"] . " --- Name: " . $row["Name"] . " --- Surname: " . $row["Surname"] . " --- Speciality: " . $row["Speciality"] . "<br>";
-                                }
+								}
                             }
                             else
                             {
