@@ -1,7 +1,7 @@
 <?php
 	$server_name = "localhost";
     $username = "root";
-    $password = "123";
+    $password = "";
 	$dbName = "engineering_connect";
 
 	//Create connection
