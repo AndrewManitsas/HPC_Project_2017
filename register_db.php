@@ -113,12 +113,7 @@
 
                             if ($pwd == $pwd2)
                             {
-                                $server_name = "localhost";
-                                $username = "root";
-                                $password = "123";
-                                $dbName = "engineering_connect";
-
-                                $connect = mysqli_connect($server_name, $username, $password, $dbName);
+                                include("database_config.php");
 
                                 if (!$connect)
                                 {

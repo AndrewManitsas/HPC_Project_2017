@@ -42,13 +42,7 @@
 					<div class="panel-heading"><h4>Log In</h4></div>
 					<div class="panel-body">
 						<?php
-                            $server_name = "localhost";
-                            $username = "root";
-                            $password = "123";
-                            $dbName = "engineering_connect";
-
-                            //Create connection
-                            $connect = mysqli_connect($server_name, $username, $password, $dbName);
+                            include("database_config.php");
 
                             //Chech if connection is live
                             if (!$connect)
