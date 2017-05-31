@@ -42,6 +42,7 @@
 					<div class="panel-heading"><h4>Log In</h4></div>
 					<div class="panel-body">
 						<?php
+<<<<<<< HEAD
                             $server_name = "localhost";
                             $username = "root";
                             $password = "";
@@ -49,6 +50,9 @@
 
                             //Create connection
                             $connect = mysqli_connect($server_name, $username, $password, $dbName);
+=======
+                            include("database_config.php");
+>>>>>>> 94f52f8ce572dde896b94187f4e025ee9a636cf9
 
                             //Chech if connection is live
                             if (!$connect)
