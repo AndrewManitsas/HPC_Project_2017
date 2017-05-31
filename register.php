@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <html>
 	<head>
 		<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
@@ -22,18 +26,37 @@
 
 		<div class="navbar navbar-inverse"> <!-- Navigation Bar with buttons and links -->
 			<ul class="nav navbar-nav"> <!-- Left Side -->
-				<li><a href="index.html"><b>Home</b></a></li>
-				<li><a href="projects.html"><b>Projects</b></a></li>
-				<li><a href="services.html"><b>Services</b></a></li>
-				<li><a href="contact.html"><b>Contact</b></a></li>
-				<li><a href="submit.html"><b>Submit your project</b></a></li>
-				<li><a href="select.html"><b>Select project</b></a></li>
+				<li><a href="index.php"><b>Home</b></a></li>
+				<li><a href="projects.php"><b>Projects</b></a></li>
+				<li><a href="services.php"><b>Services</b></a></li>
+				<li><a href="contact.php"><b>Contact</b></a></li>
+				<li><a href="submit.php"><b>Submit your project</b></a></li>
+				<li><a href="select.php"><b>Select project</b></a></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right"> <!-- Right Side -->
-				<li class="active"><a href="register.html"><span class="glyphicon glyphicon-user"></span> <b>Sign Up</b></a></li>
-				<li><a href="login.html"><span class="glyphicon glyphicon-user"></span> <b>Login</b></a></li>
+				<li class="active"><a href="register.php"><span class="glyphicon glyphicon-user"></span> <b>Sign Up</b></a></li>
+				<li><a href="login.php"><span class="glyphicon glyphicon-user"></span> <b>Login</b></a></li>
+				<li><a href="logout.php"><span class="glyphicon glyphicon-user"></span><b>Logout</b></a></li>
 			</ul>
+		</div>
+
+		<div id="acc_status" class="panel panel-primary"> <!-- Account Status -->
+			<div class="panel-heading"><h4>Account Status</h4></div>
+			<div class="panel-body">
+				<?php
+					//echo "Hello World";
+
+					if (isset($_SESSION['uid']))
+					{
+						echo "Welcome " . $_SESSION['email'];
+					}
+					else
+					{
+						echo "You are not logged in.";
+					}
+				?>
+			</div>
 		</div>
 
 		<div class="row"> <!-- Dual panel with "why register" text and register form -->
@@ -126,13 +149,8 @@
 							</div>
 							<div class="form-group">
 								<label for="speciality">Speciality</label>
-								<input type="text" class="form-control" id="speciality" name="speciality">
-							</div>
-							<div class="form-group">
-								<label for="terms">Terms and Conditions</label>
-								<br>
-								<label for="terms" class="radio-inline"><input type="radio" name="terms" value="1">Agree</label>
-								<label for="terms" class="radio-inline"><input type="radio" name="terms" value="0">Disagree</label>
+								<input type="radio" name="speciality" value="9">Customer
+								<input type="radio" name="speciality" value="1">Engineer
 							</div>
 							<button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
 						</form>
