@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Φιλοξενητής: localhost
--- Χρόνος δημιουργίας: 27 Μάη 2017 στις 22:56:18
--- Έκδοση διακομιστή: 10.1.22-MariaDB
--- Έκδοση PHP: 7.1.4
+-- Φιλοξενητής: 127.0.0.1
+-- Χρόνος δημιουργίας: 01 Ιουν 2017 στις 00:01:09
+-- Έκδοση διακομιστή: 10.1.21-MariaDB
+-- Έκδοση PHP: 7.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,19 +28,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `UID` int(4) NOT NULL,
-  `Email` varchar(30) COLLATE utf8_unicode_520_ci NOT NULL,
-  `Password` varchar(30) COLLATE utf8_unicode_520_ci NOT NULL,
-  `Name` varchar(30) COLLATE utf8_unicode_520_ci NOT NULL,
-  `Surname` varchar(30) COLLATE utf8_unicode_520_ci NOT NULL,
-  `Speciality` varchar(30) COLLATE utf8_unicode_520_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+  `Email` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Password` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Name` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Surname` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Speciality` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `users`
 --
 
 INSERT INTO `users` (`UID`, `Email`, `Password`, `Name`, `Surname`, `Speciality`) VALUES
-(1, 'st0709@icte.uowm.gr', '123', 'Andrew', 'Manitsas', 'Electronics Engineer');
+(1, 'st0709@icte.uowm.gr', 'root', 'Andrew', 'Manitsas', 0),
+(3, 'andrewmanitsas@gmail.com', '123', 'Andrew', 'Manitsas', 1);
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
@@ -62,8 +61,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT για πίνακα `users`
 --
 ALTER TABLE `users`
-  MODIFY `UID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
-
+  MODIFY `UID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
