@@ -115,7 +115,7 @@
                             {
                                 $server_name = "localhost";
                                 $username = "root";
-                                $password = "123";
+                                $password = "";
                                 $dbName = "engineering_connect";
 
                                 $connect = mysqli_connect($server_name, $username, $password, $dbName);
