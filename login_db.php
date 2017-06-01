@@ -53,15 +53,15 @@
 
 						if ($_SESSION['spec'] == 1) //Engineer
 						{
-							echo "(Engineer) " . $_SESSION['email'];
+							echo "Logged in as -> (Engineer) " . $_SESSION['email'];
 						}
 						else if ($_SESSION['spec'] == 9) //Customer
 						{
-							echo "(Customer) " . $_SESSION['email'];
+							echo "Logged in as -> (Customer) " . $_SESSION['email'];
 						}
 						else //$_SESSION['spec'] == 0 -> Admin
 						{
-							echo "(ADMIN) " . $_SESSION['email'];
+							echo "Logged in as -> (ADMIN) " . $_SESSION['email'];
 						}
 					}
 					else

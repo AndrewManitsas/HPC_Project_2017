@@ -56,15 +56,15 @@
 
 						if ($_SESSION['spec'] == 1) //Engineer
 						{
-							echo "(Engineer) " . $_SESSION['email'];
+							echo "Logged in as -> (Engineer) " . $_SESSION['email'];
 						}
 						else if ($_SESSION['spec'] == 9) //Customer
 						{
-							echo "(Customer) " . $_SESSION['email'];
+							echo "Logged in as -> (Customer) " . $_SESSION['email'];
 						}
 						else //$_SESSION['spec'] == 0 -> Admin
 						{
-							echo "(ADMIN) " . $_SESSION['email'];
+							echo "Logged in as -> (ADMIN) " . $_SESSION['email'];
 						}
 					}
 					else
@@ -80,36 +80,59 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading"><h4>Select Project</h4></div>
 					<div class="panel-body">
-						<table border="1">
-                            <tr>
-                                <th>ID</th>
-                                <th>Project Title</th>
-                                <th>Speciality</th>
-                                <th>Customer Name</th>
-                                <th>Cost</th>
-                            </tr>
-                            <tr>   
-                                <td>00128</td>
-                                <td>Road Network</td>
-                                <td>Civil Engineer</td>
-                                <td>James Brown</td>
-                                <td>1000000</td>
-                            </tr>
-                            <tr>
-                                <td>45889</td>
-                                <td>Road Lighting</td>
-                                <td>Electrical Engineer</td>
-                                <td>Michael Jackson</td>
-                                <td>520400</td>
-                            </tr>
-                            <tr>
-                                <td>77414</td>
-                                <td>Library Heating</td>
-                                <td>Mechanical Engineer</td>
-                                <td>Rihanna</td>
-                                <td>120000</td>
-                            </tr>
-                        </table>
+						<?php
+							if ($_SESSION['spec'] == 1 || $_SESSION['spec'] == 0)
+							{
+								?>
+
+								<!-- Project Select menu -->
+								<?php
+									include("database_config.php");
+									
+									$sql = "SELECT * FROM projects";
+									$result = mysqli_query($connect, $sql);
+								?>
+
+								<table border="1">
+									<tr>
+										<th><b>Project ID</b></th>
+										<th><b>Customer</b></th>
+										<th><b>Title</b></th>
+										<th><b>Decription</b></th>
+										<th><b>Assigned Engineer</b></th>
+										<th><b>SELECT / DESELECT</b></th>
+									</tr>
+
+									<?php
+										if (mysqli_num_rows($result) > 0)
+										{
+											while ($row = mysqli_fetch_assoc($result))
+											{
+												?>
+
+												<tr>
+													<td><?php echo $row['proj_id']; ?></td>
+													<td><?php echo $row['cid']; ?></td>
+													<td><?php echo $row['title']; ?></td>
+													<td><?php echo $row['description']; ?></td>
+													<td><?php echo $row['uid']; ?></td>
+													<td><?php //code for selection - deselection of project ?></td>
+												</tr>
+
+												<?php
+											}
+										}
+									?>
+								</table>
+								<!-- Project Select menu -->
+
+								<?php
+							}
+							else
+							{
+								echo "You must be logged in as engineer to view this page... Sorry.";
+							}
+						?>
 					</div>
 				</div>
 			</div>

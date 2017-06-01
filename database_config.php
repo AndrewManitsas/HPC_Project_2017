@@ -1,7 +1,7 @@
 <?php
 	$server = "localhost";
 	$username = "root";
-	$password = "123";
+	$password = "";
 	$db_name = "engineering_connect";
 
 	$connect = mysqli_connect($server, $username, $password, $db_name);
@@ -12,6 +12,6 @@
 	}
 	else
 	{
-		echo "Successfull Connection<br>";
+		//echo "Successfull Connection<br>";
 	}
 ?>

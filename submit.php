@@ -56,15 +56,15 @@
 
 						if ($_SESSION['spec'] == 1) //Engineer
 						{
-							echo "(Engineer) " . $_SESSION['email'];
+							echo "Logged in as -> (Engineer) " . $_SESSION['email'];
 						}
 						else if ($_SESSION['spec'] == 9) //Customer
 						{
-							echo "(Customer) " . $_SESSION['email'];
+							echo "Logged in as -> (Customer) " . $_SESSION['email'];
 						}
 						else //$_SESSION['spec'] == 0 -> Admin
 						{
-							echo "(ADMIN) " . $_SESSION['email'];
+							echo "Logged in as -> (ADMIN) " . $_SESSION['email'];
 						}
 					}
 					else
@@ -80,10 +80,32 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading"><h4>Upload your project</h4></div>
 					<div class="panel-body">
-						<form method="post" enctype="multipart/form-data">
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Upload File" name="submit">
-                        </form>
+						<?php
+							if ($_SESSION['spec'] == 9 || $_SESSION['spec'] == 0)
+							{
+								?>
+
+								<!-- Submit Form -->
+								<form action="submit_db.php" method="POST">
+									<div class="form-group">
+										<label for="title">Title</label>
+										<input type="text" class="form-control" id="title" name="title">
+									</div>
+									<div class="form-group">
+										<label for="description">Description</label>
+										<input type="text" class="form-control" id="description" name="description">
+									</div>
+									<button type="submit" name="submit" class="btn btn-primary" style="width: 100%">Submit</button>
+								</form>
+								<!-- Submit Form -->
+
+								<?php
+							}
+							else
+							{
+								echo "You must be logged in as customer to view this page... Sorry.";
+							}
+						?>
 					</div>
 				</div>
 			</div>
