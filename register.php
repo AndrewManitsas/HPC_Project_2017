@@ -161,10 +161,10 @@
 								<input type="text" class="form-control" id="surname" name="surname">
 							</div>
 							<div class="form-group">
-								<label for="speciality">Speciality</label>
-								<input type="radio" name="speciality" value="9">Customer
-								<input type="radio" name="speciality" value="1">Engineer
-								<input type="radio" name="speciality" value="0">ADMIN
+								<label for="speciality">Speciality</label><br>
+								<input type="radio" name="speciality" value="9"> Customer<br>
+								<input type="radio" name="speciality" value="1"> Engineer<br>
+								<input type="radio" name="speciality" value="0"> ADMIN<br>
 							</div>
 							<button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
 						</form>
