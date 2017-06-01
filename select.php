@@ -52,7 +52,20 @@
 
 					if (isset($_SESSION['uid']))
 					{
-						echo "Welcome " . $_SESSION['email'];
+						//echo "Welcome " . $_SESSION['email'];
+
+						if ($_SESSION['spec'] == 1) //Engineer
+						{
+							echo "(Engineer) " . $_SESSION['email'];
+						}
+						else if ($_SESSION['spec'] == 9) //Customer
+						{
+							echo "(Customer) " . $_SESSION['email'];
+						}
+						else //$_SESSION['spec'] == 0 -> Admin
+						{
+							echo "(ADMIN) " . $_SESSION['email'];
+						}
 					}
 					else
 					{
