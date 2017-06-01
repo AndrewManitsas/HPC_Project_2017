@@ -164,6 +164,7 @@
 								<label for="speciality">Speciality</label>
 								<input type="radio" name="speciality" value="9">Customer
 								<input type="radio" name="speciality" value="1">Engineer
+								<input type="radio" name="speciality" value="0">ADMIN
 							</div>
 							<button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
 						</form>
