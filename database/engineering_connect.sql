@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 01 Ιουν 2017 στις 00:01:09
+-- Χρόνος δημιουργίας: 02 Ιουν 2017 στις 03:45:15
 -- Έκδοση διακομιστή: 10.1.21-MariaDB
 -- Έκδοση PHP: 7.1.2
 
@@ -19,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Βάση δεδομένων: `engineering_connect`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `projects`
+--
+
+CREATE TABLE `projects` (
+  `proj_id` int(4) NOT NULL,
+  `cid` int(4) NOT NULL,
+  `title` varchar(1000) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `description` varchar(10000) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `uid` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `projects`
+--
+
+INSERT INTO `projects` (`proj_id`, `cid`, `title`, `description`, `uid`) VALUES
+(1, 6, 'Renovation', 'Apartment Renovation', NULL);
 
 -- --------------------------------------------------------
 
@@ -40,12 +61,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`UID`, `Email`, `Password`, `Name`, `Surname`, `Speciality`) VALUES
-(1, 'st0709@icte.uowm.gr', 'root', 'Andrew', 'Manitsas', 0),
-(3, 'andrewmanitsas@gmail.com', '123', 'Andrew', 'Manitsas', 1);
+(4, 'st0709@icte.uowm.gr', 'root', 'Andrew', 'Manitsas', 0),
+(5, 'andrewmanitsas@gmail.com', '123', 'Andrew', 'Manitsas', 1),
+(6, 'andrewmanitsas@outlook.com.gr', '123', 'Andrew', 'Manitsas', 9);
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
 --
+
+--
+-- Ευρετήρια για πίνακα `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`proj_id`);
 
 --
 -- Ευρετήρια για πίνακα `users`
@@ -58,10 +86,15 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT για πίνακα `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `proj_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT για πίνακα `users`
 --
 ALTER TABLE `users`
-  MODIFY `UID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `UID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

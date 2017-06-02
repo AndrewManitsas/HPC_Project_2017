@@ -1,0 +1,14 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 4.6.5.2
+ */
+
+// Database 'engineering_connect'
+
+// engineering_connect.projects
+
+[{"proj_id":"1","cid":"6","title":"Renovation","description":"Apartment Renovation","uid":null}]
+
+// engineering_connect.users
+
+[{"UID":"4","Email":"st0709@icte.uowm.gr","Password":"root","Name":"Andrew","Surname":"Manitsas","Speciality":"0"}, {"UID":"5","Email":"andrewmanitsas@gmail.com","Password":"123","Name":"Andrew","Surname":"Manitsas","Speciality":"1"}, {"UID":"6","Email":"andrewmanitsas@outlook.com.gr","Password":"123","Name":"Andrew","Surname":"Manitsas","Speciality":"9"}]
